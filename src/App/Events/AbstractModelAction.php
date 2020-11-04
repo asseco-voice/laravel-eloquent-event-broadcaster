@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Str;
 use Voice\Stomp\Queue\Contracts\HasHeaders;
 
 abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders
@@ -30,7 +31,7 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders
 
     protected function getServiceName(): string
     {
-        return Config::get('app.name');
+        return strtolower(Str::snake(Config::get('app.name')));
     }
 
     protected function getModelName(): string
