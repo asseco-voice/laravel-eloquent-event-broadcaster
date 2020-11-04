@@ -8,7 +8,7 @@ instead.
 
 ## Installation
 
-Require the package with ``composer require asseco-voice/laravel-code-quality``.
+Require the package with ``composer require asseco-voice/laravel-eloquent-event-broadcaster``.
 Service provider for Laravel will be installed automatically.
 
 ## Usage
