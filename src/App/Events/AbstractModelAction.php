@@ -12,8 +12,9 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use Voice\Stomp\Queue\Contracts\HasHeaders;
+use Voice\Stomp\Queue\Contracts\HasRawData;
 
-abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders
+abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRawData
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -48,6 +49,11 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders
             'model'   => $this->getModelName(),
             'action'  => $this->getActionName(),
         ];
+    }
+
+    public function getRawData(): array
+    {
+        return $this->model->toArray();
     }
 
     public function broadcastOn()
