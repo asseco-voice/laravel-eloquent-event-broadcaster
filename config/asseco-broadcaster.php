@@ -7,7 +7,7 @@ use Voice\EloquentEventBroadcaster\App\Events\ModelUpdated;
 return [
 
     /**
-     * Registered events
+     * Registered events.
      */
     'dispatches_events' => [
         'created' => ModelCreated::class,
@@ -16,7 +16,7 @@ return [
     ],
 
     /**
-     * Queue on which the events will be broadcast to
+     * Queue on which the events will be broadcast to.
      */
     'broadcast_queue' => 'eloquent::model_events',
 ];
