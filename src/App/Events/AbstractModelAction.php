@@ -30,6 +30,11 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
         $this->model = $model;
     }
 
+    public function broadcastQueue()
+    {
+        return Config::get('asseco-broadcaster.broadcast_queue');
+    }
+
     protected function getServiceName(): string
     {
         return strtolower(Str::snake(Config::get('app.name')));

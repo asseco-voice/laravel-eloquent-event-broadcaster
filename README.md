@@ -14,8 +14,9 @@ Service provider for Laravel will be installed automatically.
 ## Usage
 
 Make the model use a ``BroadcastsEloquentEvents`` and `created`, `updated` and `deleted`
-events will be automatically dispatched. 
+events will be automatically dispatched to a ``eloquent::model_events`` queue.
 
-If you want to modify or add new events to list, publish the configuration with:
+If you want to modify or add new events to list, or change the broadcast queue, 
+publish the configuration with:
 
     php artisan vendor:publish --provider="Voice\EloquentEventBroadcaster\BroadcasterServiceProvider"
