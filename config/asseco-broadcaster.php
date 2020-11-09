@@ -18,5 +18,5 @@ return [
     /**
      * Queue on which the events will be broadcast to
      */
-    'broadcast_queue' => 'eloquent::model_events',
+    'broadcast_queue' => 'eloquent',
 ];
