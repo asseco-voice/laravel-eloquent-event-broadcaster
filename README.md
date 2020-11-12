@@ -20,3 +20,8 @@ If you want to modify or add new events to list, or change the broadcast queue,
 publish the configuration with:
 
     php artisan vendor:publish --provider="Voice\EloquentEventBroadcaster\BroadcasterServiceProvider"
+
+It is also possible to append additional data to events.
+
+- Let your method implement ``AppendsData`` interface to append additional data.
+- Let your method implement ``AppendsHeaders`` interface to append additional headers.
