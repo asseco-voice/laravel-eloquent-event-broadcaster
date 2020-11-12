@@ -11,8 +11,8 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
-use Voice\EloquentEventBroadcaster\App\Contracts\AppendsHeaders;
 use Voice\EloquentEventBroadcaster\App\Contracts\AppendsData;
+use Voice\EloquentEventBroadcaster\App\Contracts\AppendsHeaders;
 use Voice\Stomp\Queue\Contracts\HasHeaders;
 use Voice\Stomp\Queue\Contracts\HasRawData;
 
