@@ -23,12 +23,12 @@ return [
     'broadcast_queue'   => 'eloquent',
 
     /**
-     * Disable if you don't want to have old/new attribute values propagated
+     * Disable if you don't want to have old/new attribute values propagated.
      */
     'with_changes'      => true,
 
     /**
-     * Channels to broadcast the events on
+     * Channels to broadcast the events on.
      */
     'broadcast_on'      => [],
 ];
