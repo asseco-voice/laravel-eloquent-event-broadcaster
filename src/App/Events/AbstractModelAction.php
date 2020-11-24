@@ -43,7 +43,7 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
 
     protected function handleNonStompEvents(): void
     {
-        if (Config::get('queue.default') !== self::STOMP) {
+        if (config('queue.default') !== self::STOMP) {
             $this->headers = $this->getHeaders();
 
             $this->appended = array_merge(
@@ -55,12 +55,12 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
 
     public function broadcastQueue()
     {
-        return Config::get('asseco-broadcaster.broadcast_queue');
+        return config('asseco-broadcaster.broadcast_queue');
     }
 
     protected function getServiceName(): string
     {
-        return strtolower(Str::snake(Config::get('app.name')));
+        return strtolower(Str::snake(config('app.name')));
     }
 
     protected function getModelName(): string
@@ -96,7 +96,7 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
 
     protected function appendChanges(): array
     {
-        return Config::get('asseco-broadcaster.with_changes') ? $this->getChanges() : [];
+        return config('asseco-broadcaster.with_changes') ? $this->getChanges() : [];
     }
 
     protected function getChanges(): array
@@ -150,6 +150,6 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
 
     public function broadcastOn()
     {
-        return Config::get('asseco-broadcaster.broadcast_on');
+        return config('asseco-broadcaster.broadcast_on');
     }
 }

@@ -2,11 +2,8 @@
   "name": "asseco-voice/laravel-eloquent-event-broadcaster",
   "license": "MIT",
   "require": {
-    "illuminate/support": "^8.0",
-    "illuminate/queue": "^8.0",
-    "illuminate/database": "^8.0",
-    "illuminate/contracts": "^8.0",
-    "asseco-voice/laravel-stomp": "dev-master"
+    "asseco-voice/laravel-stomp": "dev-master",
+    "laravel/framework": "^8.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.0",
