@@ -120,7 +120,6 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
         return $changes->generate();
     }
 
-
     protected function getPerformerType(): string
     {
         $data = $this->model->toArray();
