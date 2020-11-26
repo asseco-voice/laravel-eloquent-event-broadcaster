@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use Voice\EloquentEventBroadcaster\App\Contracts\AppendsData;
 use Voice\EloquentEventBroadcaster\App\Contracts\AppendsHeaders;
@@ -87,11 +86,13 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
 
     public function getRawData(): array
     {
-        return array_merge(
-            $this->model->toArray(),
+        return [
+            'payload' => array_merge(
+                $this->model->toArray(),
+                $this->appendAdditionalData()
+            ),
             $this->appendChanges(),
-            $this->appendAdditionalData()
-        );
+        ];
     }
 
     protected function appendChanges(): array
