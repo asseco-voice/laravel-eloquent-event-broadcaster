@@ -22,7 +22,7 @@ class BroadcasterServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/asseco-broadcaster.php' => config_path('asseco-broadcaster.php')
+            __DIR__ . '/../config/asseco-broadcaster.php' => config_path('asseco-broadcaster.php'),
         ], 'asseco-broadcaster-config');
     }
 }
