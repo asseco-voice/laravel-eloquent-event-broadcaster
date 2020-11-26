@@ -19,7 +19,12 @@ use Voice\Stomp\Queue\Contracts\HasRawData;
 
 abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRawData
 {
-    public const STOMP = 'stomp';
+    protected const STOMP = 'stomp';
+
+    public const CREATED = 'created';
+    public const UPDATED = 'updated';
+    public const DELETED = 'deleted';
+    public const RESTORED = 'restored';
 
     use Dispatchable, InteractsWithSockets, SerializesModels;
 

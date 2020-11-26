@@ -8,6 +8,6 @@ class ModelUpdated extends AbstractModelAction
 {
     protected function getActionName(): string
     {
-        return 'updated';
+        return self::UPDATED;
     }
 }
