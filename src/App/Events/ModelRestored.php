@@ -10,7 +10,7 @@ class ModelRestored extends AbstractModelAction
 {
     protected function getActionName(): string
     {
-        return 'restored';
+        return self::RESTORED;
     }
 
     protected function getChanges(): array

@@ -11,7 +11,7 @@ class ModelDeleted extends AbstractModelAction
 {
     protected function getActionName(): string
     {
-        return 'deleted';
+        return self::DELETED;
     }
 
     protected function getChanges(): array

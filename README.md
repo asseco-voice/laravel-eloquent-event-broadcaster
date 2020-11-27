@@ -25,10 +25,10 @@ events will be automatically dispatched to a ``eloquent::model_events`` queue.
 
 Raw data being sent consists of:
 
-- Original model serialized to array
+- `payload` key containing original model serialized to array.
+- Let your model implement ``AppendsData`` interface to append additional data to payload.
 - Changes (`_changes`) array holding `old`/`new` values and `type`/`ID` of entity
 that changed the model. Used for auditing purposes (can be disabled through config).
-- Let your model implement ``AppendsData`` interface to append additional data.
 - Headers consisting of:
     - ``service`` - lowercase snake app name
     - ``model`` - full model namespace and model name
@@ -38,4 +38,4 @@ that changed the model. Used for auditing purposes (can be disabled through conf
 
 You can tweak the configuration publishing it with:
 
-    php artisan vendor:publish --provider="Voice\EloquentEventBroadcaster\BroadcasterServiceProvider"
+    php artisan vendor:publish --tag=asseco-broadcaster-config

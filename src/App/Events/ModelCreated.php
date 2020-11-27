@@ -8,6 +8,6 @@ class ModelCreated extends AbstractModelAction
 {
     protected function getActionName(): string
     {
-        return 'created';
+        return self::CREATED;
     }
 }
