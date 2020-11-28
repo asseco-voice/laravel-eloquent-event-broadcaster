@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Asseco\EloquentEventBroadcaster\App\Events;
 
+use Asseco\EloquentEventBroadcaster\App\Contracts\AppendsData;
+use Asseco\EloquentEventBroadcaster\App\Contracts\AppendsHeaders;
+use Asseco\EloquentEventBroadcaster\ChangesModel;
+use Asseco\Stomp\Queue\Contracts\HasHeaders;
+use Asseco\Stomp\Queue\Contracts\HasRawData;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Database\Eloquent\Model;
@@ -11,11 +16,6 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Asseco\EloquentEventBroadcaster\App\Contracts\AppendsData;
-use Asseco\EloquentEventBroadcaster\App\Contracts\AppendsHeaders;
-use Asseco\EloquentEventBroadcaster\ChangesModel;
-use Asseco\Stomp\Queue\Contracts\HasHeaders;
-use Asseco\Stomp\Queue\Contracts\HasRawData;
 
 abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRawData
 {

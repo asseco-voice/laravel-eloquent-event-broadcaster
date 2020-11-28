@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Asseco\EloquentEventBroadcaster\App\Events;
 
-use Illuminate\Support\Arr;
 use Asseco\EloquentEventBroadcaster\ChangesModel;
+use Illuminate\Support\Arr;
 
 class ModelDeleted extends AbstractModelAction
 {
