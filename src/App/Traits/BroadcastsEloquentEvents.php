@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Voice\EloquentEventBroadcaster\App\Traits;
+namespace Asseco\EloquentEventBroadcaster\App\Traits;
 
 trait BroadcastsEloquentEvents
 {

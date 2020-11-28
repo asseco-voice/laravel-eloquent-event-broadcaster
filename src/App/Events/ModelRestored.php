@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Voice\EloquentEventBroadcaster\App\Events;
+namespace Asseco\EloquentEventBroadcaster\App\Events;
 
-use Voice\EloquentEventBroadcaster\ChangesModel;
+use Asseco\EloquentEventBroadcaster\ChangesModel;
 
 class ModelRestored extends AbstractModelAction
 {

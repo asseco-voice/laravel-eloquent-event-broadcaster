@@ -1,9 +1,9 @@
 <?php
 
-use Voice\EloquentEventBroadcaster\App\Events\ModelCreated;
-use Voice\EloquentEventBroadcaster\App\Events\ModelDeleted;
-use Voice\EloquentEventBroadcaster\App\Events\ModelRestored;
-use Voice\EloquentEventBroadcaster\App\Events\ModelUpdated;
+use Asseco\EloquentEventBroadcaster\App\Events\ModelCreated;
+use Asseco\EloquentEventBroadcaster\App\Events\ModelDeleted;
+use Asseco\EloquentEventBroadcaster\App\Events\ModelRestored;
+use Asseco\EloquentEventBroadcaster\App\Events\ModelUpdated;
 
 return [
 

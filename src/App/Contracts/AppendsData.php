@@ -1,6 +1,6 @@
 <?php
 
-namespace Voice\EloquentEventBroadcaster\App\Contracts;
+namespace Asseco\EloquentEventBroadcaster\App\Contracts;
 
 interface AppendsData
 {
