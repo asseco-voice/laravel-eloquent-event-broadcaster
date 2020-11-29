@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Voice\EloquentEventBroadcaster\App\Events;
+namespace Asseco\EloquentEventBroadcaster\App\Events;
 
 class ModelCreated extends AbstractModelAction
 {

@@ -1,9 +1,10 @@
 <?php
 
-use Voice\EloquentEventBroadcaster\App\Events\ModelCreated;
-use Voice\EloquentEventBroadcaster\App\Events\ModelDeleted;
-use Voice\EloquentEventBroadcaster\App\Events\ModelRestored;
-use Voice\EloquentEventBroadcaster\App\Events\ModelUpdated;
+use Asseco\EloquentEventBroadcaster\App\Events\ModelCreated;
+use Asseco\EloquentEventBroadcaster\App\Events\ModelDeleted;
+use Asseco\EloquentEventBroadcaster\App\Events\ModelRestored;
+use Asseco\EloquentEventBroadcaster\App\Events\ModelRetrieved;
+use Asseco\EloquentEventBroadcaster\App\Events\ModelUpdated;
 
 return [
 
@@ -11,10 +12,11 @@ return [
      * Registered events.
      */
     'dispatches_events' => [
-        'created'  => ModelCreated::class,
-        'updated'  => ModelUpdated::class,
-        'deleted'  => ModelDeleted::class,
-        'restored' => ModelRestored::class,
+        'created'   => ModelCreated::class,
+        'deleted'   => ModelDeleted::class,
+        'restored'  => ModelRestored::class,
+        'retrieved' => ModelRetrieved::class,
+        'updated'   => ModelUpdated::class,
     ],
 
     /**

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Voice\EloquentEventBroadcaster\App\Events;
+namespace Asseco\EloquentEventBroadcaster\App\Events;
 
+use Asseco\EloquentEventBroadcaster\ChangesModel;
 use Illuminate\Support\Arr;
-use Voice\EloquentEventBroadcaster\ChangesModel;
 
 class ModelDeleted extends AbstractModelAction
 {

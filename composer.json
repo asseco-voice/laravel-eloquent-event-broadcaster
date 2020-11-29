@@ -11,13 +11,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Voice\\EloquentEventBroadcaster\\": "src/"
+      "Asseco\\EloquentEventBroadcaster\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Voice\\EloquentEventBroadcaster\\BroadcasterServiceProvider"
+        "Asseco\\EloquentEventBroadcaster\\BroadcasterServiceProvider"
       ]
     }
   }

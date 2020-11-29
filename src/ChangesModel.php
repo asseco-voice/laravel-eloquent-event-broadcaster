@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Voice\EloquentEventBroadcaster;
+namespace Asseco\EloquentEventBroadcaster;
 
 class ChangesModel
 {

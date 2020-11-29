@@ -2,8 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Voice\EloquentEventBroadcaster\App\Events;
+namespace Asseco\EloquentEventBroadcaster\App\Events;
 
+use Asseco\EloquentEventBroadcaster\App\Contracts\AppendsData;
+use Asseco\EloquentEventBroadcaster\App\Contracts\AppendsHeaders;
+use Asseco\EloquentEventBroadcaster\ChangesModel;
+use Asseco\Stomp\Queue\Contracts\HasHeaders;
+use Asseco\Stomp\Queue\Contracts\HasRawData;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Database\Eloquent\Model;
@@ -11,20 +16,16 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Voice\EloquentEventBroadcaster\App\Contracts\AppendsData;
-use Voice\EloquentEventBroadcaster\App\Contracts\AppendsHeaders;
-use Voice\EloquentEventBroadcaster\ChangesModel;
-use Voice\Stomp\Queue\Contracts\HasHeaders;
-use Voice\Stomp\Queue\Contracts\HasRawData;
 
 abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRawData
 {
     protected const STOMP = 'stomp';
 
     public const CREATED = 'created';
-    public const UPDATED = 'updated';
     public const DELETED = 'deleted';
     public const RESTORED = 'restored';
+    public const RETRIEVED = 'retrieved';
+    public const UPDATED = 'updated';
 
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
