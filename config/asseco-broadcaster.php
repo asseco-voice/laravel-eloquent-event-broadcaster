@@ -14,7 +14,7 @@ return [
     'dispatches_events' => [
         'created'   => ModelCreated::class,
         'deleted'   => ModelDeleted::class,
-        'restored'  => ModelRestored::class,
+        // 'restored'  => ModelRestored::class,
         'retrieved' => ModelRetrieved::class,
         'updated'   => ModelUpdated::class,
     ],
