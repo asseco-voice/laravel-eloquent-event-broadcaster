@@ -33,4 +33,6 @@ return [
      * Channels to broadcast the events on.
      */
     'broadcast_on'      => [],
+
+    'enable_logs' => env('BROADCASTER_LOGS', false) === true,
 ];
