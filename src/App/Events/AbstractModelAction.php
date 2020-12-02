@@ -41,6 +41,8 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
      */
     public function __construct(Model $model)
     {
+        app('stompLog')->info('Action: ' . $this->getActionName() . ' for model ' . get_class($model));
+
         $this->model = $model;
 
         $this->handleNonStompEvents();

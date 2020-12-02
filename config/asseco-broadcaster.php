@@ -14,7 +14,7 @@ return [
     'dispatches_events' => [
         'created'   => ModelCreated::class,
         'deleted'   => ModelDeleted::class,
-        'restored'  => ModelRestored::class,
+        // 'restored'  => ModelRestored::class,
         'retrieved' => ModelRetrieved::class,
         'updated'   => ModelUpdated::class,
     ],
@@ -33,4 +33,6 @@ return [
      * Channels to broadcast the events on.
      */
     'broadcast_on'      => [],
+
+    'enable_logs' => env('BROADCASTER_LOGS', false) === true,
 ];
