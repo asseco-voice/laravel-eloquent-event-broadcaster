@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Asseco\EloquentEventBroadcaster\App\Events;
 
-use Asseco\EloquentEventBroadcaster\ChangesModel;
+use Asseco\EloquentEventBroadcaster\Changes;
 use Illuminate\Support\Arr;
 
 class ModelDeleted extends AbstractModelAction
@@ -22,7 +22,7 @@ class ModelDeleted extends AbstractModelAction
         $actionPerformerType = $this->getPerformerType();
         $actionPerformerId = $this->getPerformerId();
 
-        $changes = new ChangesModel(
+        $changes = new Changes(
             $this->model->getKey(), $actionPerformerType, $actionPerformerId, $old, $new
         );
 

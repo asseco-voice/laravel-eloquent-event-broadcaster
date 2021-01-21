@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Asseco\EloquentEventBroadcaster;
 
-class ChangesModel
+class Changes
 {
     public const CHANGES = '_changes';
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Asseco\EloquentEventBroadcaster\App\Events;
 
-use Asseco\EloquentEventBroadcaster\ChangesModel;
+use Asseco\EloquentEventBroadcaster\Changes;
 
 class ModelRestored extends AbstractModelAction
 {
@@ -20,7 +20,7 @@ class ModelRestored extends AbstractModelAction
         $actionPerformerType = $this->getPerformerType();
         $actionPerformerId = $this->getPerformerId();
 
-        $changes = new ChangesModel(
+        $changes = new Changes(
             $this->model->getKey(), $actionPerformerType, $actionPerformerId, $old, $new
         );
 
