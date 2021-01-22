@@ -6,7 +6,7 @@ namespace Asseco\EloquentEventBroadcaster\App\Events;
 
 use Asseco\EloquentEventBroadcaster\App\Contracts\AppendsData;
 use Asseco\EloquentEventBroadcaster\App\Contracts\AppendsHeaders;
-use Asseco\EloquentEventBroadcaster\ChangesModel;
+use Asseco\EloquentEventBroadcaster\Changes;
 use Asseco\Stomp\Queue\Contracts\HasHeaders;
 use Asseco\Stomp\Queue\Contracts\HasRawData;
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -95,6 +95,7 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
     public function getRawData(): array
     {
         return [
+            'uuid'    => Str::uuid(),
             'payload' => array_merge(
                 $this->model->toArray(),
                 $this->appendAdditionalData()
@@ -122,7 +123,7 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
             $new = Arr::only($this->model->toArray(), $changedKeys);
         }
 
-        $changes = new ChangesModel(
+        $changes = new Changes(
             $this->model->getKey(), $actionPerformerType, $actionPerformerId, $old, $new
         );
 
