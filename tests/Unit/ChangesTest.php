@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Asseco\EloquentEventBroadcaster\Tests\Unit;
 
-use Asseco\EloquentEventBroadcaster\Tests\TestCase;
 use Asseco\EloquentEventBroadcaster\Changes;
+use Asseco\EloquentEventBroadcaster\Tests\TestCase;
 
 class ChangesTest extends TestCase
 {
