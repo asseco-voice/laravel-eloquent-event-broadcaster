@@ -1,5 +1,6 @@
 {
   "name": "asseco-voice/laravel-eloquent-event-broadcaster",
+  "description": "Laravel eloquent events broadcasting",
   "license": "MIT",
   "require": {
     "asseco-voice/laravel-stomp": "dev-master",
