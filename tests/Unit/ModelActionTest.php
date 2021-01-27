@@ -30,7 +30,7 @@ class ModelActionTest extends TestCase
         $expected = [
             'service' => 'laravel',
             'model'   => get_class($testModel),
-            'action'  => 'test'
+            'action'  => 'test',
         ];
 
         $this->assertEquals($expected, $modelEvent->getHeaders());
@@ -94,7 +94,7 @@ class ModelActionTest extends TestCase
 
         $expected = [
             'serialized_model' => '123',
-            'appended_data'    => '123'
+            'appended_data'    => '123',
         ];
 
         $this->assertArrayHasKey('uuid', $modelEvent->getRawData());
@@ -141,5 +141,4 @@ class ModelActionTest extends TestCase
         $this->assertArrayHasKey('_changes', $rawData);
         $this->assertEquals($expected, $rawData['_changes']);
     }
-
 }
