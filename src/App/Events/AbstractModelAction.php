@@ -41,7 +41,7 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
      */
     public function __construct(Model $model)
     {
-        app('stompLog')->info('Action: ' . $this->getActionName() . ' for model ' . get_class($model));
+        app('broadcasterLog')->info('Action: ' . $this->getActionName() . ' for model ' . get_class($model));
 
         $this->model = $model;
 
@@ -94,14 +94,14 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
 
     public function getRawData(): array
     {
-        return [
+        $payload = array_merge($this->model->toArray(), $this->appendAdditionalData());
+
+        $rawData = [
             'uuid'    => Str::uuid(),
-            'payload' => array_merge(
-                $this->model->toArray(),
-                $this->appendAdditionalData()
-            ),
-            $this->appendChanges(),
+            'payload' => $payload,
         ];
+
+        return array_merge($rawData, $this->appendChanges());
     }
 
     protected function appendChanges(): array

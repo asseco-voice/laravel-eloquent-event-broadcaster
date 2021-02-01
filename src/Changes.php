@@ -23,7 +23,7 @@ class Changes
         $this->new = $new;
     }
 
-    public function generate()
+    public function generate(): array
     {
         return [self::CHANGES => [
             'id'                    => $this->modelId,
