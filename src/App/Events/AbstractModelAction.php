@@ -20,6 +20,7 @@ use Illuminate\Support\Str;
 abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRawData
 {
     protected const STOMP = 'stomp';
+    protected const SYNC = 'sync';
 
     public const CREATED = 'created';
     public const DELETED = 'deleted';
@@ -29,7 +30,7 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
 
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public Model $model;
+    protected Model $model;
 
     public array $appended = [];
     public array $headers = [];
@@ -45,19 +46,19 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
 
         $this->model = $model;
 
-        $this->handleNonStompEvents();
+        if (config('queue.default') !== self::STOMP) {
+            $this->handleNonStompEvents();
+        }
     }
 
     protected function handleNonStompEvents(): void
     {
-        if (config('queue.default') !== self::STOMP) {
-            $this->headers = $this->getHeaders();
+        $this->headers = $this->getHeaders();
 
-            $this->appended = array_merge(
-                $this->appendChanges(),
-                $this->appendAdditionalData()
-            );
-        }
+        $this->appended = array_merge(
+            $this->appendChanges(),
+            $this->appendAdditionalData()
+        );
     }
 
     public function broadcastQueue()
@@ -160,5 +161,16 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
     public function broadcastOn()
     {
         return config('asseco-broadcaster.broadcast_on');
+    }
+
+    /**
+     * Having sync driver and broadcasting deleted event throws an error
+     * because it tries to deserialize a model which has already been deleted.
+     *
+     * @return bool
+     */
+    public function broadcastWhen()
+    {
+        return config('queue.default') !== self::SYNC;
     }
 }
