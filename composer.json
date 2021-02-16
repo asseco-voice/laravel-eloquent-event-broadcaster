@@ -3,7 +3,7 @@
   "description": "Laravel eloquent events broadcasting",
   "license": "MIT",
   "require": {
-    "asseco-voice/laravel-stomp": "dev-master",
+    "asseco-voice/laravel-stomp": "~0.1",
     "laravel/framework": "^8.0"
   },
   "require-dev": {
