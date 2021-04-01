@@ -37,6 +37,24 @@ class ModelActionTest extends TestCase
     }
 
     /** @test */
+    public function it_has_plain_model_headers()
+    {
+        config(['asseco-broadcaster.full_namespaced_models' => false]);
+
+        $testModel = Mockery::mock(Model::class);
+
+        $modelEvent = new TestEvent($testModel);
+
+        $expected = [
+            'service' => 'laravel',
+            'model'   => 'mockery_0__illuminate__database__eloquent__model',
+            'action'  => 'test',
+        ];
+
+        $this->assertEquals($expected, $modelEvent->getHeaders());
+    }
+
+    /** @test */
     public function it_has_appended_headers()
     {
         $testModel = Mockery::mock(Model::class, AppendsHeaders::class);
