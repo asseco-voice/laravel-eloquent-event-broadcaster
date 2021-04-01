@@ -34,4 +34,11 @@ return [
     'broadcast_on'      => [],
 
     'enable_logs' => env('BROADCASTER_LOGS', false) === true,
+
+    /**
+     * Sending model name in headers will evaluate by default to full model namespace.
+     * Setting this option to false will throw lowercase singular instead.
+     * i.e. 'App\Models\MyModel' vs. 'my_model'
+     */
+    'full_namespaced_models' => true,
 ];
