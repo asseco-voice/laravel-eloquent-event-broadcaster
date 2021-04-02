@@ -73,7 +73,16 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
 
     protected function getModelName(): string
     {
-        return get_class($this->model);
+        $modelNamespace = get_class($this->model);
+
+        if (config('asseco-broadcaster.full_namespaced_models')) {
+            return $modelNamespace;
+        }
+
+        $explode = explode('\\', $modelNamespace);
+        $modelName = end($explode);
+
+        return Str::snake($modelName);
     }
 
     abstract protected function getActionName(): string;
