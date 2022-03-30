@@ -55,6 +55,7 @@ class ModelDeleted extends AbstractModelAction
 
     /**
      * For 'normal' delete, show only ID as being unset.
+     *
      * @return array
      */
     protected function setDeleteFields(): array

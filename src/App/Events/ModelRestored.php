@@ -29,6 +29,7 @@ class ModelRestored extends AbstractModelAction
 
     /**
      * For 'normal' delete, show only ID as being unset.
+     *
      * @return array
      */
     protected function setRestoreFields(): array
