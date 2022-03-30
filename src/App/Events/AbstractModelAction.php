@@ -38,7 +38,7 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
     /**
      * Create a new event instance.
      *
-     * @param Model $model
+     * @param  Model  $model
      */
     public function __construct(Model $model)
     {
