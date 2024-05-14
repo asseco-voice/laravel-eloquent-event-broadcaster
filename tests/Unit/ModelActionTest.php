@@ -29,8 +29,8 @@ class ModelActionTest extends TestCase
 
         $expected = [
             'service' => 'laravel',
-            'model'   => get_class($testModel),
-            'action'  => 'test',
+            'model' => get_class($testModel),
+            'action' => 'test',
         ];
 
         $this->assertEquals($expected, $modelEvent->getHeaders());
@@ -47,8 +47,8 @@ class ModelActionTest extends TestCase
 
         $expected = [
             'service' => 'laravel',
-            'model'   => 'mockery_0__illuminate__database__eloquent__model',
-            'action'  => 'test',
+            'model' => 'mockery_0__illuminate__database__eloquent__model',
+            'action' => 'test',
         ];
 
         $this->assertEquals($expected, $modelEvent->getHeaders());
@@ -66,9 +66,9 @@ class ModelActionTest extends TestCase
         $modelEvent = new TestEvent($testModel);
 
         $expected = [
-            'service'         => 'laravel',
-            'model'           => get_class($testModel),
-            'action'          => 'test',
+            'service' => 'laravel',
+            'model' => get_class($testModel),
+            'action' => 'test',
             'appended_header' => '123',
         ];
 
@@ -112,7 +112,7 @@ class ModelActionTest extends TestCase
 
         $expected = [
             'serialized_model' => '123',
-            'appended_data'    => '123',
+            'appended_data' => '123',
         ];
 
         $this->assertArrayHasKey('uuid', $modelEvent->getRawData());
@@ -145,11 +145,11 @@ class ModelActionTest extends TestCase
         $modelEvent = new TestEvent($testModel);
 
         $expected = [
-            'id'                    => 'id',
+            'id' => 'id',
             'action_performer_type' => 'unknown',
-            'action_performer_id'   => 'unknown',
-            'old'                   => ['attribute' => 'test-before'],
-            'new'                   => ['attribute' => 'test-after'],
+            'action_performer_id' => 'unknown',
+            'old' => ['attribute' => 'test-before'],
+            'new' => ['attribute' => 'test-after'],
         ];
 
         $rawData = $modelEvent->getRawData();
