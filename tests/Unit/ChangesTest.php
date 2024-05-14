@@ -15,11 +15,11 @@ class ChangesTest extends TestCase
         $changes = new Changes(1, 'user', '1', [], []);
 
         $expected = ['_changes' => [
-            'id'                    => 1,
+            'id' => 1,
             'action_performer_type' => 'user',
-            'action_performer_id'   => '1',
-            'old'                   => [],
-            'new'                   => [],
+            'action_performer_id' => '1',
+            'old' => [],
+            'new' => [],
         ]];
 
         $this->assertEquals($expected, $changes->generate());

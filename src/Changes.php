@@ -26,11 +26,11 @@ class Changes
     public function generate(): array
     {
         return [self::CHANGES => [
-            'id'                    => $this->modelId,
+            'id' => $this->modelId,
             'action_performer_type' => $this->actionPerformerType,
-            'action_performer_id'   => $this->actionPerformerId,
-            'old'                   => $this->old,
-            'new'                   => $this->new,
+            'action_performer_id' => $this->actionPerformerId,
+            'old' => $this->old,
+            'new' => $this->new,
         ]];
     }
 }
