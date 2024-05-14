@@ -91,8 +91,8 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
     {
         $headers = [
             'service' => $this->getServiceName(),
-            'model'   => $this->getModelName(),
-            'action'  => $this->getActionName(),
+            'model' => $this->getModelName(),
+            'action' => $this->getActionName(),
         ];
 
         if ($this->model instanceof AppendsHeaders) {
@@ -107,7 +107,7 @@ abstract class AbstractModelAction implements ShouldBroadcast, HasHeaders, HasRa
         $payload = array_merge($this->model->toArray(), $this->appendAdditionalData());
 
         $rawData = [
-            'uuid'    => Str::uuid(),
+            'uuid' => Str::uuid(),
             'payload' => $payload,
         ];
 

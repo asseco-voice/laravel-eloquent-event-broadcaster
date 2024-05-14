@@ -39,14 +39,14 @@ class ModelDeleted extends AbstractModelAction
         $data = $this->model->toArray();
 
         $old = [
-            'deleted_at'   => null,
-            'deleted_by'   => null,
+            'deleted_at' => null,
+            'deleted_by' => null,
             'deleter_type' => null,
         ];
 
         $new = [
-            'deleted_at'   => Arr::get($data, 'deleted_at'),
-            'deleted_by'   => Arr::get($data, 'deleted_by'),
+            'deleted_at' => Arr::get($data, 'deleted_at'),
+            'deleted_by' => Arr::get($data, 'deleted_by'),
             'deleter_type' => Arr::get($data, 'deleter_type'),
         ];
 
