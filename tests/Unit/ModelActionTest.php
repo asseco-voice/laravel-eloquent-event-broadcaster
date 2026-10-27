@@ -20,7 +20,7 @@ class ModelActionTest extends TestCase
         config(['asseco-broadcaster.with_changes' => false]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_has_headers()
     {
         $testModel = Mockery::mock(Model::class);
@@ -36,7 +36,7 @@ class ModelActionTest extends TestCase
         $this->assertEquals($expected, $modelEvent->getHeaders());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_has_plain_model_headers()
     {
         config(['asseco-broadcaster.full_namespaced_models' => false]);
@@ -54,7 +54,7 @@ class ModelActionTest extends TestCase
         $this->assertEquals($expected, $modelEvent->getHeaders());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_has_appended_headers()
     {
         $testModel = Mockery::mock(Model::class, AppendsHeaders::class);
@@ -75,7 +75,7 @@ class ModelActionTest extends TestCase
         $this->assertEquals($expected, $modelEvent->getHeaders());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_raw_data()
     {
         $testModel = Mockery::mock(Model::class);
@@ -95,7 +95,7 @@ class ModelActionTest extends TestCase
         $this->assertEquals($expected, $modelEvent->getRawData()['payload']);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_appended_data()
     {
         $testModel = Mockery::mock(Model::class, AppendsData::class);
@@ -120,7 +120,7 @@ class ModelActionTest extends TestCase
         $this->assertEquals($expected, $modelEvent->getRawData()['payload']);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_model_changes()
     {
         config(['asseco-broadcaster.with_changes' => true]);

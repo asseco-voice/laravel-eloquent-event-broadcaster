@@ -9,7 +9,7 @@ use Asseco\EloquentEventBroadcaster\Tests\TestCase;
 
 class ChangesTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function returns_changes_array()
     {
         $changes = new Changes(1, 'user', '1', [], []);
